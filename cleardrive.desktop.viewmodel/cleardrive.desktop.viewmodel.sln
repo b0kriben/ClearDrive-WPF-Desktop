@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cleardrive.desktop.viewmodel", "cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel.csproj", "{D3572A01-0E21-4B76-BE61-1CF392BAE604}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3572A01-0E21-4B76-BE61-1CF392BAE604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3572A01-0E21-4B76-BE61-1CF392BAE604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3572A01-0E21-4B76-BE61-1CF392BAE604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3572A01-0E21-4B76-BE61-1CF392BAE604}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90FAED7C-DF4D-4872-BE0F-6A550BD4AC0F}
+	EndGlobalSection
+EndGlobal
