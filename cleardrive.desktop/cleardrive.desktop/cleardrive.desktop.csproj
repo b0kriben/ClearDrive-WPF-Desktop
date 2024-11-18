@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel.csproj" />
+  </ItemGroup>
+
 </Project>
