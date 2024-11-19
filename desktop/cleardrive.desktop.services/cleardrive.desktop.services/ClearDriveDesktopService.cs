@@ -3,18 +3,15 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 //using desktop.cleardrive.desktop.models;
+using Models;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace desktop.cleardrive.desktop.services
 {
     public class ClearDriveDesktopService : IClearDriveDesktopService
     {
-        public Task<List</*Position*/>> SelectAll/*Position*/()
-        {
-
-        }
-
-        /*private readonly HttpClient? _httpClient;
-
+        private readonly HttpClient _httpClient;
         public ClearDriveDesktopService(IHttpClientFactory? httpClientFactory)
         {
             if (httpClientFactory is not null)
@@ -32,6 +29,6 @@ namespace desktop.cleardrive.desktop.services
                     return result;
             }
             return new List<Position>();
-        }*/
+        }
     }
 }

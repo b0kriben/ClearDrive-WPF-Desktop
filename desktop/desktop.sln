@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cleardrive.desktop.viewmode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cleardrive.desktop.services", "cleardrive.desktop.services\cleardrive.desktop.services\cleardrive.desktop.services.csproj", "{98D7E4D7-08D5-4322-8CCB-DEE61438A2E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extensions\Extensions.csproj", "{FB8047C2-1B98-4349-BED2-15692B8147FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{915A7390-EA1A-4437-BA33-CE93E8297ED6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{98D7E4D7-08D5-4322-8CCB-DEE61438A2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D7E4D7-08D5-4322-8CCB-DEE61438A2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D7E4D7-08D5-4322-8CCB-DEE61438A2E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8047C2-1B98-4349-BED2-15692B8147FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8047C2-1B98-4349-BED2-15692B8147FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8047C2-1B98-4349-BED2-15692B8147FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8047C2-1B98-4349-BED2-15692B8147FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915A7390-EA1A-4437-BA33-CE93E8297ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915A7390-EA1A-4437-BA33-CE93E8297ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915A7390-EA1A-4437-BA33-CE93E8297ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915A7390-EA1A-4437-BA33-CE93E8297ED6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

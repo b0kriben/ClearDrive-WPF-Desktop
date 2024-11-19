@@ -16,7 +16,7 @@ namespace cleardrive.desktop
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : System.Windows.Window
     {
         //private static readonly HttpClient client = new HttpClient();
         //private readonly HttpClient _httpClient;
