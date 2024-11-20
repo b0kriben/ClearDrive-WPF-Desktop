@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 
-namespace desktop.Extensions
+namespace desktop.cleardrive.extensions
 {
     public static class HttpCliensExtension
     {

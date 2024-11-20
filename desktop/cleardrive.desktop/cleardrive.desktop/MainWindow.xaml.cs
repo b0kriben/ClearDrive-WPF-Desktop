@@ -22,7 +22,6 @@ namespace cleardrive.desktop
         public MainWindow()
         {
             InitializeComponent();
-            //this.DataContext = new MainViewModel();
         }
     }
 }

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel.csproj" />
+    <ProjectReference Include="..\..\cleardrive.extensions\cleardrive.extensions.csproj" />
     <ProjectReference Include="..\..\Models\Models.csproj" />
   </ItemGroup>
 

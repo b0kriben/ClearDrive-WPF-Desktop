@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using desktop.cleardrive.desktop.services;
 using Models;
 
-namespace Extensions
+namespace cleardrive.extensions
 {
     public static class ApiServiceExtensions
     {

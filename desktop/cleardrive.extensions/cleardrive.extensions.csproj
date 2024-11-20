@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.10" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\cleardrive.desktop.services\cleardrive.desktop.services\cleardrive.desktop.services.csproj" />
     <ProjectReference Include="..\cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel\cleardrive.desktop.viewmodel.csproj" />
-    <ProjectReference Include="..\cleardrive.desktop\cleardrive.desktop\cleardrive.desktop.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
