@@ -7,13 +7,13 @@
         public bool HasId => Id != Guid.Empty;
 
 
-    public Position(Guid id, Location location)
+        /*public Position(Guid id, Location location)
         {
             Id = id;
             Location = location;
-        }
+        }*/
 
-    public Position(Location location)
+        public Position(Location location)
         {
             Id = new Guid();
             Location = location;

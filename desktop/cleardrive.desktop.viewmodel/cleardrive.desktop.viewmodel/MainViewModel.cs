@@ -1,77 +1,115 @@
 ﻿//using cleardrive.shared.Models;
+using cleardrive.desktop.viewmodel.Base;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using desktop.cleardrive.desktop.services;
+using Microsoft.Maui.Devices.Sensors;
+using Models;
 using System.Collections.ObjectModel;
+using System.Net.NetworkInformation;
 
 namespace cleardrive.desktop.viewmodel
 {
-    public class MainViewModel : ViewModelBase
+    public partial class MainViewModel : BaseViewModel
     {
-        private double _elapsedTime;
-        private string _designedItem;
-        private int _timeCalculation;
+        private readonly IClearDriveDesktopService? _clearDriveDesktopService;
 
-        public double ElapsedTime
-        {
-            get { return _elapsedTime; }
-            set
-            {
-                _elapsedTime = value;
-                OnPropertyChanged();
-            }
-        }
+        [ObservableProperty]
+        private ObservableCollection<Position> _locations = new();
 
-        public int TimeCalculation
-        {
-            get { return _timeCalculation; }
-            set
-            {
-                _timeCalculation = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<string> ObstacleList { get; set; }
-
-        public string DesignedItem
-        {
-            get { return _designedItem; }
-            set
-            {
-                _designedItem = value;
-                OnPropertyChanged();
-                Calculation();
-            }
-        }
+        [ObservableProperty]
+        private Position _selectedLocation;
 
         public MainViewModel()
         {
-            ObstacleList = new ObservableCollection<string>
-            {
-                "Közúti hibák",
-                "Természeti hibák",
-                "Egyéb hibák"
-            };
-            _designedItem = ObstacleList[0];
-            Calculation();
+            SelectedLocation = new Position();
         }
 
-        private void Calculation()
+        public MainViewModel(IClearDriveDesktopService? clearDriveDesktopService)
         {
+            SelectedLocation = new Position();
+            _clearDriveDesktopService = clearDriveDesktopService;
 
-            switch (_designedItem)
-            {
-                case "Közúti hibák":
-                    TimeCalculation = 20;
-                    break;
-                case "Természeti hibák":
-                    TimeCalculation = 30;
-                    break;
-                case "Egyéb hibák":
-                    TimeCalculation = 40;
-                    break;
-            }
-
-
-            ElapsedTime = 10.5;
         }
+
+        [RelayCommand]
+        public async Task DoSave(Position newPosition)
+        {
+            if (_clearDriveDesktopService is not null)
+            {
+                string result = "";
+                if (!newPosition.HasId)
+                    result = await _clearDriveDesktopService.InsertAsync(newPosition);
+
+                if (result.Length == 0)
+                {
+                    await UpdateView();
+                }
+            }
+        }
+
+        [RelayCommand]
+        void DoNewStudent()
+        {
+            SelectedLocation = new Position();
+        }
+
+        [RelayCommand]
+        public async Task DoRemove(Position position)
+        {
+            if (_clearDriveDesktopService is not null)
+            {
+                string result = await _clearDriveDesktopService.DeleteAsync(position.Id);
+                if (result.Length == 0)
+                {
+                    await UpdateView();
+                }
+            }
+        }
+
+        /*public void AddLocation(Location temp)
+        {
+            _locations.Add(LocationToPositionConverter(temp));
+        }*/
+
+        /*public Position LocationToPositionConverter(Location temp) 
+        {
+            Position _temp_max = new Position(new Location(0,0));
+            _temp_max.LocationINPC = temp;
+           return _temp_max;
+        }*/
+
+        public override async Task InitializeAsync()
+        {
+            await UpdateView();
+        }
+
+        private async Task UpdateView()
+        {
+            if (_clearDriveDesktopService is not null)
+            {
+                List<Position> positions = await _clearDriveDesktopService.SelectAll();
+                Locations = new ObservableCollection<Position>(positions);
+            }
+        }
+
+        /*public Pin CreatePin(Location temp)
+        {
+            return new Pin
+            {
+                Location = temp,
+                Label = temp.Timestamp.Year.ToString() + "." + temp.Timestamp.Month.ToString() + "." + temp.Timestamp.Day.ToString() + "  " + temp.Timestamp.Hour.ToString() + ":" + temp.Timestamp.Minute.ToString() + ":" + temp.Timestamp.Second.ToString(),
+                Address = ((float)temp.Longitude).ToString() + ", " + ((float)temp.Latitude).ToString(),
+                Type = PinType.SavedPin
+            };
+        }*/
+
+        /*public void RemoveLocation(Position temp)
+        {
+            if (_locations.Any())
+            {
+                _locations.Remove(temp);
+            }
+        }*/
     }
 }
